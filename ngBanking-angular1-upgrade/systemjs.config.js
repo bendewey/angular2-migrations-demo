@@ -30,7 +30,6 @@ System.config({
                 'npm:angular-route/angular-route.js',
                 // dependencies to load before this module
                 'app/app.js',
-                'app/generalLedgerSvc.js',
                 'app/appCmp.js',
                 'app/accountsCmp.js',
                 'app/accountCmp.js',

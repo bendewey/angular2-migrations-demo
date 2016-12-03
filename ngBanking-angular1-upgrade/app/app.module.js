@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var static_1 = require('@angular/upgrade/static');
+var general_ledger_service_1 = require('./general-ledger.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,6 +22,9 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 static_1.UpgradeModule
             ],
+            providers: [
+                general_ledger_service_1.GeneralLedgerService,
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
