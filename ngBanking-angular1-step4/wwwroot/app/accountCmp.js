@@ -1,14 +1,10 @@
 (function () {
 	'use strict';
 
-	controller.$inject = ['$scope', '$routeParams', 'GeneralLedger'];
-	function controller($scope, $routeParams, generalLedger) {
+	controller.$inject = ['$routeParams', 'GeneralLedger'];
+	function controller($routeParams, generalLedger) {
 		var vm = this;
 
-		vm.newDescription = '';
-		vm.newAmount = '';
-		vm.billTo = '';
-		vm.billAmount = '';
 		vm.account = generalLedger.getById($routeParams.accountId);
 		vm.ledger = vm.account.ledger;
 

@@ -5,8 +5,8 @@
 	function controller($scope) {
 		var vm = this;
 
-		vm.newDescription = '';
-		vm.newAmount = '';
+		vm.billTo = '';
+		vm.billAmount = '';
 
 		vm.payBill = function () {
 			if ($scope.billPay.$valid) {
@@ -23,7 +23,7 @@
 	}
 
 	angular.module('ngBanking').component('billpayForm', {
-		templateUrl: '/app/billpayFormDir.html',
+		templateUrl: '/app/billpayForm.html',
 		controller: controller,
 		controllerAs: 'vm',
 		bindings: {

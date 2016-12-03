@@ -23,7 +23,7 @@
 	}
 
 	angular.module('ngBanking').component('depositForm', {
-		templateUrl: '/app/depositFormDir.html',
+		templateUrl: '/app/depositForm.html',
 		controller: controller,
 		controllerAs: 'vm',
 		bindings: {
