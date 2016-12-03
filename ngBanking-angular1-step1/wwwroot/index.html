@@ -7,6 +7,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <link href="bower_components/flat-bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <base href="/" />
 </head>
 
 <body ng-app="ngBanking">
@@ -29,8 +30,8 @@
         <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
           <ul class="nav navbar-nav">
-            <li ng-class="getActiveClass('/account')"><a href="#/">Accounts</a></li>
-            <li ng-class="getActiveClass('/about')"><a href="#/about">About</a></li>
+            <li ng-class="getActiveClass('/account')"><a href="/">Accounts</a></li>
+            <li ng-class="getActiveClass('/about')"><a href="/about">About</a></li>
           </ul>
         </div>
       </div>

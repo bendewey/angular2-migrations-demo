@@ -1,7 +1,9 @@
 angular
   .module('ngBanking', [
     'ngRoute'
-  ]).config(function ($routeProvider) {
+  ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    $locationProvider.html5Mode(true);
+    
     $routeProvider
       .when('/account', {
         templateUrl: 'app/accounts.html'
@@ -16,7 +18,7 @@ angular
       .otherwise({
         redirectTo: '/account'
       });
-  }).run(['$rootScope', '$location', function ($rootScope, $location) {
+  }]).run(['$rootScope', '$location', function ($rootScope, $location) {
 
     $rootScope.accounts = [
       { id: '1', name: "Checking Account", ledger: [], balance: 0 },
