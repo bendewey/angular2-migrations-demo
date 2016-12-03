@@ -1,7 +1,9 @@
 angular
   .module('ngBanking', [
     'ngRoute',
-  ]).config(function ($routeProvider) {
+  ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    $locationProvider.html5Mode(true);
+
     $routeProvider
       .when('/account', {
         template: '<accounts-view></accounts-view>'
@@ -15,7 +17,7 @@ angular
       .otherwise({
         redirectTo: '/account'
       });
-  }).run(['GeneralLedger', function (generalLedger) {
+  }]).run(['GeneralLedger', function (generalLedger) {
     generalLedger.loadAccounts();
     if (generalLedger.accounts.length === 0) {
       generalLedger.add('acct1', 'Checking Account');
