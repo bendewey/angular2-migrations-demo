@@ -1,0 +1,29 @@
+{
+  "name": "ngBanking",
+  "author": {
+    "name": "Ben Dewey"
+  },
+  "homepage": "",
+  "licenses": "MIT",
+  "main": "README.md",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-bootstrap": "^1.2.5",
+    "jquery": "^2.2.1",
+    "ui-bootstrap": "^0.1.6"
+  },
+  "scripts": {
+    "build": "npm install",
+    "prestart": "npm install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "start": "lite-server"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/angular": "^1.5.20",
+    "@types/angular-animate": "^1.5.5",
+    "@types/angular-route": "^1.3.2",
+    "lite-server": "^2.2.2"
+  }
+}
