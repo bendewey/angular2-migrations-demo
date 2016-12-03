@@ -1,25 +1,16 @@
-/**
- * @ngdoc overview
- * @name ngTestApp
- * @description
- * # ngTestApp
- *
- * Main module of the application.
- */
 angular
   .module('ngBanking', [
-    'ngRoute',
-    'ui.bootstrap'
+    'ngRoute'
   ]).config(function ($routeProvider) {
     $routeProvider
       .when('/account', {
-        templateUrl: 'app/views/accounts.html'
+        templateUrl: 'app/accounts.html'
       })
       .when('/account/:accountId', {
-        templateUrl: 'app/views/account.html'
+        templateUrl: 'app/account.html'
       })
       .when('/about', {
-        templateUrl: 'app/views/about.html'
+        templateUrl: 'app/about.html'
       })
       .otherwise({
         redirectTo: '/account'
