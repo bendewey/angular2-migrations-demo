@@ -1,18 +1,17 @@
 angular
   .module('ngBanking', [
-    'ngRoute',
-    'ui.bootstrap'
+    'ngRoute'
   ]).config(function ($routeProvider) {
     $routeProvider
       .when('/account', {
-        templateUrl: 'app/views/accounts.html'
+        templateUrl: 'app/accounts.html'
       })
       .when('/account/:accountId', {
-        templateUrl: 'app/views/account.html',
+        templateUrl: 'app/account.html',
         controller: 'accountCtrl'
       })
       .when('/about', {
-        templateUrl: 'app/views/about.html'
+        templateUrl: 'app/about.html'
       })
       .otherwise({
         redirectTo: '/account'
