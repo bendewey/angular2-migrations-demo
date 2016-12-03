@@ -1,0 +1,12 @@
+<div class="panel panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Accounts</div>
+
+  <!-- List group -->
+  <div class="list-group">
+        <a [routerLink]="['/accounts', account.id]" class="list-group-item" *ngFor="let account of accounts">
+            <h4 class="list-group-item-heading">{{account.name}}</h4>
+            <p class="list-group-item-text">{{account.balance | currency:'USD':true:'1.2-2'}}</p>
+        </a>
+    </div>
+</div>

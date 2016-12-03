@@ -1,0 +1,24 @@
+{
+  "name": "ngBanking",
+  "author": {
+    "name": "Ben Dewey"
+  },
+  "homepage": "",
+  "licenses": "MIT",
+  "main": "README.md",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-bootstrap": "^1.2.5",
+    "jquery": "^2.2.1",
+    "ui-bootstrap": "^0.1.6"
+  },
+  "scripts": {
+    "build": "npm install",
+    "prestart": "npm install",
+    "start": "http-server -o"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}

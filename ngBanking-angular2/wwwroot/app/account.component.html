@@ -1,0 +1,70 @@
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Tools</div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <form #depositForm="ngForm" *ngIf="depositFormActive" (ngSubmit)="addTransaction()" class="form-inline">
+                        <div>
+                            <div *ngIf="memo.touched && memo.errors && memo.errors.required" class="alert alert-danger">Memo is required.</div>
+                            <div *ngIf="amount.touched && amount.errors && amount.errors.required" class="alert alert-danger">Amount is required.</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="memo">Memo</label>
+                            <input type="text" class="form-control" name="memo" placeholder="Memo" [(ngModel)]="newDescription" required #memo="ngModel">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="amount">Amount (in dollars)</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">$</div>
+                                <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount" [(ngModel)]="newAmount" required #amount="ngModel">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="!depositForm.form.valid">Deposit</button>
+                    </form>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <form #billForm="ngForm" *ngIf="billFormActive" (ngSubmit)="payBill()"class="form-inline">
+                        <div>
+                            <div *ngIf="billToCompany.touched && billToCompany.errors && billToCompany.errors.required" class="alert alert-danger">Bill To is required.</div>
+                            <div *ngIf="billToAmount.touched && billToAmount.errors && billToAmount.errors.required" class="alert alert-danger">Amount is required.</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="billToCompany">Bill To</label>
+                            <input type="text" class="form-control" name="billToCompany" placeholder="Bill To" [(ngModel)]="billTo" required #billToCompany="ngModel">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="billToAmount">Amount (in dollars)</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">$</div>
+                                <input type="text" class="form-control" name="billToAmount" placeholder="Amount" [(ngModel)]="billAmount" required #billToAmount="ngModel">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="!billForm.form.valid">Pay Bill</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of ledger">
+                <td>{{item.description}}</td>
+                <td>{{item.amount | currency:'USD':true:'1.2-2'}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th [textContent]="balance() | currency:'USD':true:'1.2-2'"></th>
+            </tr>
+        </tfoot>
+    </table>
