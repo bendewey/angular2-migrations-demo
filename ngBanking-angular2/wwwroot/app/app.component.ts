@@ -37,7 +37,7 @@ import { GeneralLedgerService } from './general-ledger.service';
 
     <div class="footer">
       <div class="container">
-        <p>https://github.com/bendewey/jstesting-demo</p>
+        <p>https://github.com/bendewey/angular2-migrations-demo</p>
       </div>
     </div>
   `

@@ -7,7 +7,7 @@
  * Main module of the application.
  */
 angular
-  .module('ngBanking',[
+  .module('ngBanking', [
     'ngRoute',
     'ui.bootstrap'
   ]).config(function ($routeProvider) {
@@ -24,10 +24,10 @@ angular
       .otherwise({
         redirectTo: '/account'
       });
-  }).run(['GeneralLedger', function(generalLedger) {
+  }).run(['GeneralLedger', function (generalLedger) {
     generalLedger.loadAccounts();
     if (generalLedger.accounts.length === 0) {
       generalLedger.add('acct1', 'Checking Account');
       generalLedger.add('acct2', 'Savings Account');
-    }    
+    }
   }]);

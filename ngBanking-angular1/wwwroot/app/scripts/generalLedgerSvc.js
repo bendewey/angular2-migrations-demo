@@ -12,21 +12,21 @@
             });
             return total;
         },
-        loadAccounts: function() {
+        loadAccounts: function () {
             var accountsJson = sessionStorage.getItem('accounts');
             var accountIds = accountsJson ? JSON.parse(accountsJson) : [];
-            this.accounts = accountIds.map(function(acctId) { 
+            this.accounts = accountIds.map(function (acctId) {
                 var accountJson = sessionStorage.getItem(acctId);
                 var account = accountJson ? JSON.parse(accountJson) : {};
                 if (account.id) {
                     return new Account(account.id, account.name, account.ledger);
                 }
                 return null;
-             });
+            });
         },
         getById: function (id) {
             var acct;
-            this.accounts.forEach(function(a) {
+            this.accounts.forEach(function (a) {
                 if (a.id === id) {
                     acct = a;
                 }
@@ -36,8 +36,8 @@
         add: function (id, name) {
             var acct = new Account(id, name);
             this.accounts.push(acct);
-            var jsonAcctIds = JSON.stringify(this.accounts.map(function(a) {
-                return a.id;                
+            var jsonAcctIds = JSON.stringify(this.accounts.map(function (a) {
+                return a.id;
             }));
             sessionStorage.setItem('accounts', jsonAcctIds);
             return acct;

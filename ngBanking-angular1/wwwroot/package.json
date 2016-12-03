@@ -15,10 +15,10 @@
   "scripts": {
     "build": "npm install",
     "prestart": "npm install",
-    "start": "http-server -o"
+    "start": "lite-server"
   },
   "version": "1.0.0",
   "devDependencies": {
-    "http-server": "^0.9.0"
+    "lite-server": "^2.2.2"
   }
 }
