@@ -27,30 +27,12 @@
 				return vm.account.balance;
 			};
 
-			vm.addTransaction = function () {
-				if ($scope.deposit.$valid) {
-					var item = {
-						description: vm.newDescription,
-						amount: vm.newAmount
-					};
-					vm.account.add(item);
-					vm.newDescription = '';
-					vm.newAmount = '';
-					$scope.deposit.$setUntouched();
-				}
+			vm.addTransaction = function (transaction) {
+				vm.account.add(transaction);
 			};
 
-			vm.payBill = function () {
-				if ($scope.billPay.$valid) {
-					var item = {
-						description: vm.billTo,
-						amount: -vm.billAmount
-					};
-					vm.account.add(item);
-					vm.billTo = '';
-					vm.billAmount = '';
-					$scope.billPay.$setUntouched();
-				}
+			vm.payBill = function (transaction) {
+				vm.account.add(transaction);
 			};
 		}
 
