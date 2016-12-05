@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var static_1 = require('@angular/upgrade/static');
+//import { AccountsComponent } from './accountsCmp';
+var accountListItemCmp_1 = require('./accountListItemCmp');
 var general_ledger_service_1 = require('./general-ledger.service');
 var AppModule = (function () {
     function AppModule() {
@@ -22,8 +24,15 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 static_1.UpgradeModule
             ],
+            declarations: [
+                // AccountsComponent
+                accountListItemCmp_1.AccountListItemComponent
+            ],
             providers: [
                 general_ledger_service_1.GeneralLedgerService,
+            ],
+            entryComponents: [
+                accountListItemCmp_1.AccountListItemComponent
             ]
         }), 
         __metadata('design:paramtypes', [])

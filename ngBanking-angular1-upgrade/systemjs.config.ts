@@ -38,7 +38,7 @@ System.config({
         'app/appCmp.js',
         'app/accountsCmp.js',
         'app/accountCmp.js',
-        'app/accountListItemCmp.js',
+        //'app/accountListItemCmp.js',
         'app/depositFormCmp.js',
         'app/billpayFormCmp.js',
 
