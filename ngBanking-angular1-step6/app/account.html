@@ -9,7 +9,7 @@
                     <deposit-form on-deposit="vm.addTransaction(transaction)"></deposit-form>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <billpay-form on-paybill="vm.payBill(transaction)"></billpay-form>
+                    <billpay-form on-paybill="vm.addTransaction(transaction)"></billpay-form>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in vm.ledger track by $index">
+            <tr ng-repeat="item in vm.account.ledger track by $index">
                 <td>{{item.description}}</td>
                 <td>{{item.amount | currency}}</td>
             </tr>
@@ -31,7 +31,7 @@
         <tfoot>
             <tr>
                 <th></th>
-                <th ng-bind="vm.balance() | currency"></th>
+                <th ng-bind="vm.account.balance | currency"></th>
             </tr>
         </tfoot>
     </table>
