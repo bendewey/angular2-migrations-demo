@@ -6,10 +6,10 @@
 
             <div class="row">
                 <div class="col-sm-12 col-md-6">
-                    <deposit-form on-deposit="vm.addTransaction(transaction)"></deposit-form>
+                    <deposit-form (onDeposit)="addTransaction($event)"></deposit-form>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <billpay-form on-paybill="vm.payBill(transaction)"></billpay-form>
+                    <billpay-form (onPaybill)="addTransaction($event)"></billpay-form>
                 </div>
             </div>
 
@@ -23,15 +23,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in vm.ledger track by $index">
+            <tr *ngFor="let item of account.ledger">
                 <td>{{item.description}}</td>
-                <td>{{item.amount | currency}}</td>
+                <td>{{item.amount | currency:'USD':true:'1.2-2'}}</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
                 <th></th>
-                <th ng-bind="vm.balance() | currency"></th>
+                <th [textContent]="account.balance | currency:'USD':true:'1.2-2'"></th>
             </tr>
         </tfoot>
     </table>

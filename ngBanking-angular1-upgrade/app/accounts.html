@@ -6,7 +6,7 @@
 
         <!-- List group -->
         <div class="list-group">
-            <account-list-item [account]="account" ng-repeat="account in vm.accounts"></account-list-item>
+            <account-list-item [account]="account" *ngFor="let account of accounts"></account-list-item>
         </div>
     </div>
 

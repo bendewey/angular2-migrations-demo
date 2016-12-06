@@ -11,8 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var static_1 = require('@angular/upgrade/static');
-//import { AccountsComponent } from './accountsCmp';
+var accountsCmp_1 = require('./accountsCmp');
+var accountCmp_1 = require('./accountCmp');
 var accountListItemCmp_1 = require('./accountListItemCmp');
+var depositFormCmpUpgrade_1 = require('./depositFormCmpUpgrade');
+var billingFormCmpUpgrade_1 = require('./billingFormCmpUpgrade');
 var general_ledger_service_1 = require('./general-ledger.service');
 var AppModule = (function () {
     function AppModule() {
@@ -25,13 +28,23 @@ var AppModule = (function () {
                 static_1.UpgradeModule
             ],
             declarations: [
-                // AccountsComponent
-                accountListItemCmp_1.AccountListItemComponent
+                accountsCmp_1.AccountsComponent,
+                accountCmp_1.AccountComponent,
+                accountListItemCmp_1.AccountListItemComponent,
+                depositFormCmpUpgrade_1.DepositFormDirective,
+                billingFormCmpUpgrade_1.BillPayFormDirective
             ],
             providers: [
                 general_ledger_service_1.GeneralLedgerService,
+                {
+                    provide: '$routeParams',
+                    useFactory: routeParamsFactory,
+                    deps: ['$injector']
+                }
             ],
             entryComponents: [
+                accountsCmp_1.AccountsComponent,
+                accountCmp_1.AccountComponent,
                 accountListItemCmp_1.AccountListItemComponent
             ]
         }), 
@@ -40,4 +53,8 @@ var AppModule = (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
+function routeParamsFactory(i) {
+    return i.get('$routeParams');
+}
+exports.routeParamsFactory = routeParamsFactory;
 //# sourceMappingURL=app.module.js.map

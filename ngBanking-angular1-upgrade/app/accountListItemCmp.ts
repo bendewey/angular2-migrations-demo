@@ -1,6 +1,6 @@
 declare var angular: angular.IAngularStatic;
 
-import { Component, Input, ElementRef } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { downgradeComponent } from '@angular/upgrade/static';
 import { Account } from './account';
 

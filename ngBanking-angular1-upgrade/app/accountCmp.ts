@@ -1,30 +1,31 @@
-(function () {
-	'use strict';
+declare var angular: angular.IAngularStatic;
 
-	controller.$inject = ['$routeParams', 'GeneralLedger'];
-	function controller($routeParams, generalLedger) {
-		var vm = this;
+import { Component, Inject } from '@angular/core'
+import { GeneralLedgerService } from './general-ledger.service';
+import { Account } from './account';
 
-		vm.account = generalLedger.getById($routeParams.accountId);
-		vm.ledger = vm.account.ledger;
+import { downgradeComponent } from '@angular/upgrade/static';
 
-		vm.balance = function () {
-			return vm.account.balance;
-		};
+@Component({
+	moduleId: module.id,
+	selector: 'account-view',
+	templateUrl: '/app/account.html'
+})
+export class AccountComponent {
+	account: Account;
 
-		vm.addTransaction = function (transaction) {
-			vm.account.add(transaction);
-		};
-
-		vm.payBill = function (transaction) {
-			vm.account.add(transaction);
-		};
+	constructor( @Inject('$routeParams') $routeParams: any, generalLedger: GeneralLedgerService) {
+		this.account = generalLedger.getById($routeParams.accountId);
 	}
 
-	angular.module('ngBanking').component('accountView', {
-		templateUrl: '/app/account.html',
-		controller: controller,
-		controllerAs: 'vm'
-	});
+	addTransaction(transaction) {
+		this.account.add(transaction);
+	}
+}
 
-})();
+angular.module('ngBanking')
+	//.component(
+	.directive(
+	'accountView',
+	downgradeComponent({ component: AccountComponent }) as angular.IDirectiveFactory
+	);
