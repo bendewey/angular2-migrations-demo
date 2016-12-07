@@ -5,4 +5,3 @@ Step2: Migrate to services based storage and communication between components
 Step3: Migrate to Directives
 Step4: Migrate to Angular1.5 components
 Step5: Migrate to TS
-Step6: Implement a ModuleLoader, move to NPM, move to js boot
