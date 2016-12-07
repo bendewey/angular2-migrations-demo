@@ -6,7 +6,7 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-  <link href="bower_components/flat-bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <link href="/bower_components/flat-bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
   <base href="/" />
 </head>
 
@@ -26,5 +26,14 @@
   <script src="app/accountListItemCmp.js"></script>
   <script src="app/depositFormCmp.js"></script>
   <script src="app/billpayFormCmp.js"></script>
+
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="/systemjs.config.js"></script>
+  <script>
+    System.import('boot')
+  </script>
+
 </body>
 </html>
