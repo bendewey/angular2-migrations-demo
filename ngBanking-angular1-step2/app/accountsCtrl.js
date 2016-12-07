@@ -1,7 +1,7 @@
 (function(undefined) {
     var app = angular.module('ngBanking');
 
-app.controller('accountsCtrl', ['$scope', 'GeneralLedger', function($scope, generalLedger) {
+app.controller('accountsCtrl', ['GeneralLedger', function(generalLedger) {
 	
     var vm = this;
 	
