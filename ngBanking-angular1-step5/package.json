@@ -12,7 +12,6 @@
   },
   "scripts": {
     "build": "npm install",
-    "prestart": "npm install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "start": "lite-server"

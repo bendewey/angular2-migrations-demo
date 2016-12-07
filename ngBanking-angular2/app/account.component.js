@@ -36,7 +36,6 @@ var AccountComponent = (function () {
     };
     AccountComponent.prototype.addTransaction = function () {
         var _this = this;
-        //if ($scope.deposit.$valid) {
         this.depositFormActive = false;
         var item = {
             description: this.newDescription,
@@ -46,12 +45,9 @@ var AccountComponent = (function () {
         this.newDescription = '';
         this.newAmount = '';
         setTimeout(function () { return _this.depositFormActive = true; }, 0);
-        //  $scope.deposit.$setUntouched();
-        //}
     };
     AccountComponent.prototype.payBill = function () {
         var _this = this;
-        // if ($scope.billPay.$valid) {
         this.billFormActive = false;
         var item = {
             description: this.billTo,
@@ -61,8 +57,6 @@ var AccountComponent = (function () {
         this.billTo = '';
         this.billAmount = '';
         setTimeout(function () { return _this.billFormActive = true; }, 0);
-        //   $scope.billPay.$setUntouched();
-        // }
     };
     AccountComponent = __decorate([
         core_1.Component({
