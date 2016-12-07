@@ -1,1 +1,0 @@
-{"version":3,"file":"accountListItemCmp.js","sourceRoot":"","sources":["accountListItemCmp.ts"],"names":[],"mappings":"AAAA,CAAC;IACA,YAAY,CAAC;IAEb,OAAO,CAAC,MAAM,CAAC,WAAW,CAAC,CAAC,SAAS,CAAC,iBAAiB,EAAE;QACxD,WAAW,EAAE,2BAA2B;QACxC,QAAQ,EAAE;YACT,OAAO,EAAE,GAAG;SACZ;KACD,CAAC,CAAC;AAEJ,CAAC,CAAC,EAAE,CAAC"}
